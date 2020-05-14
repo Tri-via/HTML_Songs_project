@@ -1,0 +1,145 @@
+<!--PROJECT-->
+<!--TOPIC 2: SONG PAGE-->
+<!--NAME- KUSHAGRA GOENKA ; ROLL NO.- 11912032 ; CLASS- CS-A2-->
+<!-- This a page for playing songs.  -->
+
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta charset="utf-8" />  
+    <title>PLAYit</title>  
+    <style type="text/css">  
+        body {  
+            margin: 0;  
+            background: #e6e6e6;  
+        }  
+        .showSlide {  
+            display: none  
+        }  
+            .showSlide img {  
+                width: 100%;  
+            }  
+        .slidercontainer {  
+            max-width: 700px;  
+            position: relative;  
+            margin: auto;  
+        }  
+        .left, .right {  
+            cursor: pointer;  
+            position: absolute;  
+            top: 50%;  
+            width: auto;  
+            padding: 16px;  
+            margin-top: -22px;  
+            color: white;  
+            font-weight: bold;  
+            font-size: 18px;  
+            transition: 0.6s ease;  
+            border-radius: 0 3px 3px 0;  
+        }  
+        .right {  
+            right: 0;  
+            border-radius: 3px 0 0 3px;  
+        }  
+            .left:hover, .right:hover {  
+                background-color: rgba(115, 115, 115, 0.8);  
+            }  
+        .content {  
+            color: cyan;  
+            font-size: 100px;  
+            padding: 8px 0px;
+            position: absolute;  
+            top: 20px;  
+            width: 100%;  
+            text-align: center;  
+
+        }  
+
+        .active {  
+            background-color: #717171;  
+        }  
+        /* Fading animation */  
+        .fade {  
+            -webkit-animation-name: fade;  
+            -webkit-animation-duration: 1.5s;  
+            animation-name: fade;  
+            animation-duration: 1.5s;  
+        }  
+        @-webkit-keyframes fade {  
+            from {  
+                opacity: .4  
+            }  
+            to {  
+                opacity: 1  
+            }  
+        }  
+  
+        @keyframes fade {  
+            from {  
+                opacity: .4  
+            }  
+            to {  
+                opacity: 1  
+            }  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class="slidercontainer">  
+        <div class="showSlide fade">  
+            <img src="tophits.jpg" height="250">  
+            <div class="content">Top Hits</div>  
+        </div>  
+        <div class="showSlide fade">  
+            <img src="love.jpg" /height="250">  
+            <div class="content">Love</div>  
+        </div>  
+  
+        <div class="showSlide fade">  
+            <img src="bhakti.jpg" /height="250">  
+            <div class="content">Bhakti</div>  
+        </div>  
+        <div class="showSlide fade">  
+            <img src="hiphop.jpg" /height="250">  
+            <div class="content">Hiphop</div>  
+        </div>  
+        <div class="showSlide fade">  
+            <img src="party.jpg" /height="250">  
+            <div class="content">Party</div>
+        </div>
+
+        <div class="showSlide fade">  
+            <img src="rock.jpg" /height="250">  
+            <div class="content">Rock</div>
+        </div>
+        <!-- Navigation arrows -->  
+        <a class="left" onclick="nextSlide(-1)">❮</a>  
+        <a class="right" onclick="nextSlide(1)">❯</a>  
+    </div>  
+  
+    <script type="text/javascript">  
+        var slide_index = 1;  
+        displaySlides(slide_index);  
+  
+        function nextSlide(n) {  
+            displaySlides(slide_index += n);  
+        }  
+  
+        function currentSlide(n) {  
+            displaySlides(slide_index = n);  
+        }  
+  
+        function displaySlides(n) {  
+            var i;  
+            var slides = document.getElementsByClassName("showSlide");  
+            if (n > slides.length) { slide_index = 1 }  
+            if (n < 1) { slide_index = slides.length }  
+            for (i = 0; i < slides.length; i++) {  
+                slides[i].style.display = "none";  
+            }  
+            slides[slide_index - 1].style.display = "block";  
+        }  
+    </script>  
+  
+</body>  
+</html>
